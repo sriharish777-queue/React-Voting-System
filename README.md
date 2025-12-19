@@ -1,161 +1,197 @@
-# Decentralized-Voting-System-Using-Ethereum-Blockchain
+React-Based Decentralized Voting System Using Ethereum Blockchain
+The React-Based Decentralized Voting System is a secure, transparent, and blockchain-powered web application designed for conducting elections without intermediaries. Built using React, Ethereum smart contracts, Ganache, Truffle, and MetaMask, this system ensures tamper-proof voting records while maintaining voter anonymity and integrity.
 
-#### The Decentralized Voting System using Ethereum Blockchain is a secure and transparent solution for conducting elections. Leveraging Ethereum's blockchain technology, this system ensures tamper-proof voting records, enabling users to cast their votes remotely while maintaining anonymity and preventing fraud. Explore this innovative project for trustworthy and decentralized voting processes.
-#### For a cool demo of this project watch this [YouTube video](https://www.youtube.com/watch?v=a5CJ70D2P-E).
-#### For more details checkout [Project Report](https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain/blob/main/Project%20Report%20github.pdf).
-#### PS: This project is not maintained anymore.
+🔗 GitHub Repository:
+👉 https://github.com/sriharish777-queue/React-Voting-System
 
-## Features
--  Implements JWT for secure voter authentication and authorization.
--  Utilizes Ethereum blockchain for tamper-proof and transparent voting records.
--  Removes the need for intermediaries, ensuring a trustless voting process.
--  Admin panel to manage candidates, set voting dates, and monitor results.
--  Intuitive UI for voters to cast votes and view candidate information.
+🚀 Features
 
-## Requirements
-- Node.js (version – 18.14.0)
-- Metamask
-- Python (version – 3.9)
-- FastAPI
-- MySQL Database (port – 3306)
+🔐 Secure wallet-based authentication using MetaMask
 
-## Screenshots
+⛓️ Ethereum smart contracts for tamper-proof voting
 
-![Login Page](https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain/blob/main/public/login%20ss.png)
+🧾 Transparent and immutable vote storage on blockchain
 
-![Admin Page](https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain/blob/main/public/admin%20ss.png)
+👨‍💼 Admin panel to:
 
-![Voter Page](https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain/blob/main/public/index%20ss.png)
+Add candidates
 
-## Installation
+Control voting process
 
-1. Open a terminal.
+🧑‍💻 User-friendly React UI
 
-2. Clone the repository by using the command
-        
-        git clone https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain.git
+⚡ Local blockchain testing using Ganache
 
-3. Download and install [Ganache](https://trufflesuite.com/ganache/).
+🔄 Real-time interaction with smart contracts using Web3.js
 
-4. Create a workspace named <b>developement</b>, in the truffle projects section add `truffle-config.js` by clicking `ADD PROJECT` button.
+🛠️ Tech Stack
 
-5. Download [Metamask](https://metamask.io/download/) extension for the browser.
+Frontend: React + Vite
 
-6. Now create wallet (if you don't have one), then import accounts from ganache.
+Blockchain: Ethereum (Solidity)
 
-7. Add network to the metamask. ( Network name - Localhost 7575, RPC URl - http://localhost:7545, Chain ID - 1337, Currency symbol - ETH)
+Smart Contract Tools: Truffle
 
-8. Open MySQL and create database named <b>voter_db</b>. (DON'T USE XAMPP)
+Local Blockchain: Ganache
 
-9. In the database created, create new table named <b>voters</b> in the given format and add some values.
+Wallet: MetaMask
 
-           CREATE TABLE voters (
-           voter_id VARCHAR(36) PRIMARY KEY NOT NULL,
-           role ENUM('admin', 'user') NOT NULL,
-           password VARCHAR(255) NOT NULL
-           );
-   <br>
+Web3 Provider: Web3.js
 
-        +--------------------------------------+-------+-----------+
-        | voter_id                             | role  | password  |
-        +--------------------------------------+-------+-----------+
-        |                                      |       |           |
-        +--------------------------------------+-------+-----------+
+Language: JavaScript, Solidity
 
-12. Install truffle globally
-    
-        npm install -g truffle
+📋 Requirements
 
-14. Go to the root directory of repo and install node modules
+Node.js (v18+ recommended)
 
-        npm install
+npm
 
-15. Install python dependencies
+MetaMask browser extension
 
-        pip install fastapi mysql-connector-python pydantic python-dotenv uvicorn uvicorn[standard] PyJWT
+Ganache (GUI)
 
-## Usage
+Truffle (npm install -g truffle)
 
-#### Note: Update the database credentials in the `./Database_API/.env` file.
+Modern browser (Chrome / Edge)
 
-1. Open terminal at the project directory
+📁 Project Structure
+React-Voting-System/
+│
+├── client/
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vite.config.js
+│   └── src/
+│       ├── main.jsx
+│       ├── App.jsx
+│       ├── components/
+│       │   ├── WalletConnect.jsx
+│       │   ├── AdminPanel.jsx
+│       │   └── CandidateList.jsx
+│       └── blockchain/
+│           ├── web3.js
+│           ├── votingContract.js
+│           └── Voting.json
+│
+├── contracts/
+│   ├── Migrations.sol
+│   └── Voting.sol
+│
+├── migrations/
+│   └── 1_initial_migration.js
+│
+├── build/
+│   └── contracts/
+│       ├── Migrations.json
+│       └── Voting.json
+│
+├── truffle-config.js
+├── package.json
+├── package-lock.json
+└── README.md
 
-2. Open Ganache and it's <b>development</b> workspace.
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/sriharish777-queue/React-Voting-System.git
+cd React-Voting-System
 
-3. open terminal in project's root directory and run the command
+2️⃣ Install Dependencies
+npm install
+cd client
+npm install
 
-        truffle console
-   then compile the smart contracts with command
+3️⃣ Setup Ganache
 
-        compile
-   exit the truffle console
+Open Ganache
 
-5. Bundle app.js with browserify
-    
-        browserify ./src/js/app.js -o ./src/dist/app.bundle.js
+Create a workspace (Quickstart is fine)
 
-2. Start the node server server
-    
-        node index.js
+Ensure:
 
-3. Navigate to `Database_API` folder in another terminal
-    
-        cd Database_API
-    then start the database server by following command
+RPC Server: http://127.0.0.1:7545
 
-        uvicorn main:app --reload --host 127.0.0.1
+Network ID: 5777
 
-4. In a new terminal migrate the truffle contract to local blockchain
-    
-        truffle migrate
+4️⃣ Configure MetaMask
 
-You're all set! The Voting app should be up and running now at http://localhost:8080/.<br>
-For more info about usage checkout [YouTube video](https://www.youtube.com/watch?v=a5CJ70D2P-E).
+Install MetaMask extension
 
-## Code Structure
+Add a custom network:
 
-    ├── blockchain-voting-dapp            # Root directory of the project.
-        ├── build                         # Directory containing compiled contract artifacts.
-        |   └── contracts                 
-        |       ├── Migrations.json       
-        |       └── Voting.json           
-        ├── contracts                     # Directory containing smart contract source code.
-        |   ├── 2_deploy_contracts.js     
-        |   ├── Migrations.sol            
-        |   └── Voting.sol                
-        ├── Database_API                  # API code for database communication.
-        |   └── main.py                   
-        ├── migrations                    # Ethereum contract deployment scripts.
-        |   └── 1_initial_migration.js    
-        ├── node_modules                  # Node.js modules and dependencies.
-        ├── public                        # Public assets like favicon.
-        |   └── favicon.ico               
-        ├── src                           
-        |   ├── assets                    # Project images.
-        |   |   └── eth5.jpg              
-        |   ├── css                       # CSS stylesheets.
-        |   |   ├── admin.css             
-        |   |   ├── index.css             
-        |   |   └── login.css             
-        |   ├── dist                      # Compiled JavaScript bundles.
-        |   |   ├── app.bundle.js         
-        |   |   └── login.bundle.js       
-        |   ├── html                      # HTML templates.
-        |   |   ├── admin.html            
-        |   |   ├── index.html            
-        |   |   └── login.html            
-        |   └── js                        # JavaScript logic files.
-        |       ├── app.js                
-        |       └── login.js              
-        ├── index.js                      # Main entry point for Node.js application.
-        ├── package.json                  # Node.js package configuration.
-        ├── package-lock.json             # Lockfile for package dependencies.
-        ├── README.md                     # Project documentation.
-        └── truffle-config.js                    # Truffle configuration file.
+Network Name: Ganache Local
+RPC URL: http://127.0.0.1:7545
+Chain ID: 5777
+Currency Symbol: ETH
 
-## License
 
-The code in this repository is licensed under the MIT License. This means that you are free to use, modify, and distribute the code, as long as you include the original copyright and license notice. For more information about LICENSE please click [here](https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain/blob/main/LICENSE).
+Import Ganache Account 0 using its private key
 
-## If you like this project, please give it a 🌟.
-## Thank you 😊.
+Ensure MetaMask shows 100 ETH
+
+5️⃣ Compile & Deploy Smart Contracts
+
+From project root:
+
+truffle compile
+truffle migrate --reset
+
+6️⃣ Copy Contract ABI to Client
+
+Copy:
+
+build/contracts/Voting.json
+
+
+to:
+
+client/src/blockchain/Voting.json
+
+7️⃣ Start the React App
+cd client
+npm run dev
+
+
+Open the URL shown by Vite (example):
+
+http://localhost:5173
+
+🧪 Usage
+
+1.Connect MetaMask wallet
+
+2.Admin adds candidates
+
+3.Users vote using MetaMask transactions
+
+4.Votes are stored on Ethereum blockchain (Ganache)
+
+🧠 How It Works
+
+Smart contracts define voting logic
+
+React frontend interacts with contracts via Web3.js
+
+MetaMask signs transactions
+
+Ganache simulates Ethereum network locally
+
+🎓 Academic Use Note
+
+This project is intended for educational purposes, such as:
+
+College mini / major projects
+
+Blockchain demonstrations
+
+Learning Ethereum DApps
+
+📜 License
+
+This project is licensed under the MIT License.
+You are free to use, modify, and distribute this project with attribution.
+
+👤 Author
+
+Sriharish J
+🔗 GitHub: https://github.com/sriharish777-queue
