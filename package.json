@@ -1,19 +1,20 @@
 {
-  "name": "decentralized-voting",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "blockchain-voting-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "jsonwebtoken": "^9.0.0",
-    "@truffle/contract": "^4.6.18",
-    "browserify": "^17.0.0",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "web3": "^1.9.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "web3": "^4.16.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^7.3.0"
   }
 }
